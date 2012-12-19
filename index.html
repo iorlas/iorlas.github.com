@@ -2,30 +2,57 @@
 layout: layout
 title: Home
 ---
-
-      <div class="jumbotron">
-        <h1>Howdy!</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-
-      <hr>
+{% comment %}
+<div class="jumbotron">
+<h1>Howdy!</h1>
+<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+<hr>
+{% endcomment %}
 
 
-<div class="row-fluid marketing">
-        <div class="span9">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+<div class="row-fluid marketing"><div class="span12">
+{% for post in site.posts|limit:5 %}
+    <article>
+        <header>
+            <a href="{{ post.url }}">
+                <h2>{{ post.title }}</h2>
+                <time>
+                    {{ post.date|date_to_long_string }}
+                </time>
+            </a>
+        </header>
+        {{ post.content }}
+    </article>
+    <div class="pagination">
+        <ul>
+            {% if post.previous %}
+                <li class="prev">
+                    <a href="{{ BASE_PATH }}{{ post.previous.url }}" title="{{ post.previous.title }}">&larr; Previous</a>
+                </li>
+            {% else %}
+                <li class="prev disabled">
+                    <a>&larr; Previous</a>
+                </li>
+            {% endif %}
+            {% if post.next %}
+                <li class="next">
+                    <a href="{{ BASE_PATH }}{{ post.next.url }}" title="{{ post.next.title }}">Next &rarr;</a>
+                </li>
+            {% else %}
+                <li class="next disabled">
+                    <a>Next &rarr;</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endfor %}
+</div></div>
+    
+      <h4>Subheading</h4>
+      <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+    
 
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-      </div>
 
