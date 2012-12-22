@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
-    <!-- Le styles -->
-    <link href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="{{ site.baseurl }}/assets/res/custom.css" rel="stylesheet">
-    <link rel="alternate" type="application/atom+xml" title="Atom feed" href="{{ site.baseurl }}/atom.xml">
-    <style>
-      body {
-        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-      }
-    </style>
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- Le styles -->
+    <link href="{{ BASE_PATH }}/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/assets/css/style.css?body=1" rel="stylesheet">
+    <link href="{{ BASE_PATH }}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    
+    
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="{{ BASE_PATH }}/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ BASE_PATH }}/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ BASE_PATH }}/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ BASE_PATH }}/assets/images/apple-touch-icon-114x114.png">
+  -->
   </head>
 
   <body>
 
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <ul class="nav">
-          {% for node in site.pages %}
-          {% if node.title != null %}
-          {% if node.group == 'index' %}
-          {% if page.url == node.url %}
-            <li class="active"><a href="{{ site.baseurl }}/" class="active">Blog</a></li>
-          {% else %}
-            <li><a href="{{ site.baseurl }}/">Blog</a></li>
-          {% endif %}
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-          {% for node in site.pages %}
-          {% if node.title != null %}
-          {% if node.group == 'navigation' %}
-          {% if page.url == node.url %}
-            <li class="active"><a href="{{ site.baseurl }}{{node.url}}" class="active">{{node.title}}</a></li>
-          {% else %}
-            <li><a href="{{ site.baseurl }}{{node.url}}">{{node.title}}</a></li>
-          {% endif %}
-          {% endif %}
-          {% endif %}
-          {% endfor %}
-          </ul>
-        </div>
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/">Главная</a></li>
+          <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/archive">Посты</a></li>
+          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/pages">Что-то там</a></li>
+          <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/about">Я</a></li>
+        </ul>
+        <h3 class="muted">{{ site.name }}</h3>
       </div>
-    </div>
-    <div class="container">
-      <div class="content-main">
-        {{ content }}
-        <hr>
-        <footer>
-          <p>&copy; {{ site.author.name }} {{ site.time | date: "%Y" }}
-          </p>
-        </footer>
-      </div>
+
+      <hr>
+
+      {{ content }}
+
+      <hr>
+
+      <footer>
+        <p class="pull-left">&copy; <a href="{{ BASE_PATH }}/about">{{ site.author.name }}</a> 2012 → ∞ </p>
+        <p class="pull-right muted">Powered using GitHub Pages and Jekyll</p>
+      </footer>
+
     </div> <!-- /container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-transition.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-alert.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-dropdown.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tab.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-tooltip.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-popover.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-button.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{{ site.google-analytics-id }}']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
   </body>
 </html>

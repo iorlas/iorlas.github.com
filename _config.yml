@@ -1,5 +1,24 @@
-title : Iorlay
+# Name of your blog (this will show up in the RSS feed)
+name: Socially Awkward Penguin blog
+
 author :
-  name : iorlas
+  name : DenisT
+  email : dt0xff@gmail.com
+  github : iorlas
+  twitter : username
+  feedburner : feedname
+
+# Short description (will also be used in the RSS feed)
+description: Thoughts, ideas and experiance of stupid developer
+
+# Continue compiling even if there are errors. Keep it true, unless troubleshooting.
+auto: true
+
+# Makes pretty permalinks. See Jekyll docs for alternatives.
+permalink: pretty
+
 markdown: rdiscount
-production_url: http://iorlas.github.com
+
+google-analytics-id: 'UA-36442381-2'
+
+production_url: http://iorlas.github.com/
