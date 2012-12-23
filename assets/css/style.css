@@ -37,6 +37,15 @@ body {
   margin-top: 28px;
 }
 
+blockquote p{
+  color: #555;
+  font-size: 14px;
+}
+blockquote {
+  color: #555;
+  font-size: 14px;
+}
+
 blockquote.top-quote p{
   font-size: 14px;
 /*  font-style: italic;*/
