@@ -4,8 +4,14 @@ layout: default
 
 <div class="row-fluid">
 <div class="span12">
-    <h3>{{ page.title }}</h3>
 
+    <blockquote class="pull-right top-quote">
+    <p>{{ page.quote | newline_to_br}}</p>
+    {% if page.quote_author %}<small>{{ page.quote_author }}</small>{% endif %}
+    </blockquote>
+
+    <h3>{{ page.title }}</h3>
+    {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}
     <p>{{ content }}</p>
 </div>
 </div>
