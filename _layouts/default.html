@@ -18,17 +18,17 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="{{ BASE_PATH }}/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="{{ BASE_PATH }}/assets/css/style.css?body=1" rel="stylesheet">
-    <link href="{{ BASE_PATH }}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ site.production_url }}/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ site.production_url }}/assets/css/style.css?body=1" rel="stylesheet">
+    <link href="{{ site.production_url }}/assets/css/bootstrap-responsive.css" rel="stylesheet">
     
     
     <!-- Le fav and touch icons -->
   <!-- Update these with your own images
-    <link rel="shortcut icon" href="{{ BASE_PATH }}/assets/images/favicon.ico">
-    <link rel="apple-touch-icon" href="{{ BASE_PATH }}/assets/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="{{ BASE_PATH }}/assets/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="{{ BASE_PATH }}/assets/images/apple-touch-icon-114x114.png">
+    <link rel="shortcut icon" href="{{ site.production_url }}/assets/images/favicon.ico">
+    <link rel="apple-touch-icon" href="{{ site.production_url }}/assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.production_url }}/assets/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.production_url }}/assets/images/apple-touch-icon-114x114.png">
   -->
   </head>
 
@@ -38,10 +38,11 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/">Главная</a></li>
-          <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/archive">Посты</a></li>
-          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/pages">Что-то там</a></li>
-          <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="{{ BASE_PATH }}/about">Я</a></li>
+          <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="{{ site.production_url }}/">Главная</a></li>
+          <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="{{ site.production_url }}/archive">Посты</a></li>
+          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="{{ site.production_url }}/pages">Что-то</a></li>
+          <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="{{ site.production_url }}/about">Я</a></li>
+          <li ><a href="{{ site.production_url }}/feed" style="color:#e06f2d;">RSS</a></li>
         </ul>
         <h3 class="muted">{{ site.name }}</h3>
       </div>
@@ -53,7 +54,7 @@
       <hr>
 
       <footer>
-        <p class="pull-left">&copy; <a href="{{ BASE_PATH }}/about">{{ site.author.name }}</a> 2012 → ∞ </p>
+        <p class="pull-left">&copy; <a href="{{ site.production_url }}/about">{{ site.author.name }}</a> 2012 → ∞ </p>
         <p class="pull-right muted">Powered using GitHub Pages, Jekyll and 101 souls of penguins</p>
       </footer>
 
