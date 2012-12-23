@@ -11,11 +11,8 @@ layout: default
     {% if page.quote_author %}<small>{{ page.quote_author }}</small>{% endif %}
     </blockquote>
 
-    <h3>{{ page.title }}<br /> <small>@ {{ page.date | date_to_long_string }}</small></h3>
-    {% if page.excerpt %}<p>{{ page.excerpt }}</p>{% endif %}
+    <h4>{{ page.title }}<br /> <small>@ {{ page.date | date_to_long_string }}</small></h4>
     <p>{{ content }}</p>
-    
-
 
     <div class="pagination">
       <ul>
