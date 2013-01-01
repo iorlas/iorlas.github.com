@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Hello world
-quote: The beginning is the most important part of the work.
-quote_author: Plato
 ---
 
 Окей, наконец-то я перебрался на Jekyll.

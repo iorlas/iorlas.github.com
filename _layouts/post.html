@@ -1,29 +1,23 @@
 ---
-#nav-active: posts
 layout: default
 ---
 
 <div class="row-fluid">
   <div class="span12">
-
-    <blockquote class="pull-right top-quote">
-    <p>{{ page.quote | newline_to_br}}</p>
-    {% if page.quote_author %}<small>{{ page.quote_author }}</small>{% endif %}
-    </blockquote>
-
-    <h4>{{ page.title }}<br /> <small>@ {{ page.date | date_to_long_string }}</small></h4>
-    <p>{{ content }}</p>
-
-    <div class="pagination">
+    <span class="post-date">{{ post.date | date: "%d %b" }}</span>
+    <h4>{{ page.title }}</h4>
+    <p class="blog-page-body">{{ content }}</p>
+    <br />
+    <div class="pagination pagination-centered">
       <ul>
         {% if page.previous %}
-          <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title | strip_html | truncate: 30 }}</a></li>
+          <li class="prev"><a href="{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; {{ page.previous.title | strip_html | truncate: 30 }}</a></li>
         {% else %}
           <li class="prev disabled"><a>&larr; Previous</a></li>
         {% endif %}
-          <li><a href="{{ BASE_PATH }}/archive">Все посты</a></li>
+          <li><a href="/archive">Все посты</a></li>
         {% if page.next %}
-          <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title | strip_html | truncate: 30 }} &rarr;</a></li>
+          <li class="next"><a href="{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title | strip_html | truncate: 30 }} &rarr;</a></li>
         {% else %}
           <li class="next disabled"><a>Next &rarr;</a>
         {% endif %}

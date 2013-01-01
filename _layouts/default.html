@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
-    
+    <link rel="alternate" type="application/rss+xml" href="/feed">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -18,9 +18,9 @@
     <![endif]-->
 
     <!-- Le styles -->
-    <link href="{{ site.production_url }}/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="{{ site.production_url }}/assets/css/style.css?body=1" rel="stylesheet">
-    <link href="{{ site.production_url }}/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/assets/css/style.css?body=1" rel="stylesheet">
+    <link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
     
     
     <!-- Le fav and touch icons -->
@@ -38,11 +38,11 @@
 
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="{{ site.production_url }}/">Главная</a></li>
-          <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="{{ site.production_url }}/archive">Посты</a></li>
-          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="{{ site.production_url }}/pages">Что-то</a></li>
-          <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="{{ site.production_url }}/about">Я</a></li>
-          <li ><a href="{{ site.production_url }}/feed" style="color:#e06f2d;">RSS</a></li>
+          <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="/">Главная</a></li>
+          <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="/archive">Посты</a></li>
+          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="/pages">Что-то</a></li>
+          <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="/about">Я</a></li>
+          <li ><a href="/feed" style="color:#e06f2d;">RSS</a></li>
         </ul>
         <h3 class="muted">{{ site.name }}</h3>
       </div>
@@ -54,7 +54,7 @@
       <hr>
 
       <footer>
-        <p class="pull-left">&copy; <a href="{{ site.production_url }}/about">{{ site.author.name }}</a> 2012 → ∞ </p>
+        <p class="pull-left">&copy; <a href="/about">{{ site.author.name }}</a> 2012 → ∞ </p>
         <p class="pull-right muted">Powered using GitHub Pages, Jekyll and 101 souls of penguins</p>
       </footer>
 

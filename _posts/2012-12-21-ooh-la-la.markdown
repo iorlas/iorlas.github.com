@@ -1,8 +1,6 @@
 ---
 layout: post
 title: Ooh la la la reggae dancin'! Ooh la la la let's go dancin!
-quote: Soon the earth will tilt on its axis and begin to dance to the reggae beat to the accompaniment of earthquake. And who can resist the dance of the earthquake, mon?
-quote_author: Peter Tosh
 ---
 
 ![Такие дела](/assets/img/djembedrumming.jpg)

@@ -1,11 +1,11 @@
 {% if post.content contains '<!-- more -->' %}
 
-<div>
+<div class="blog-page-body">
   {{ post.content | replace: "<!-- more -->", "<!-- more" }}
   -->
 </div>
 
 {% else %}
 
-  <div>{{ post.content }}</div>
+  <div class="blog-page-body">{{ post.content }}</div>
 {% endif %}

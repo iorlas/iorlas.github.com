@@ -2,11 +2,16 @@
 layout: default
 ---
 {% for post in site.posts limit:5 %}
+  <span class="post-date">{{ post.date | date: "%d %b" }}</span>
   <div class="post">
-    <h4>{{ post.title }} <small style="white-space:nowrap;">@ {{ post.date | date: "%d %b" }}</small></h4>
+    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
     {% include post_excerpt_github_hack.html %}
     <div class="pagination">
-      <ul><li><a href="{{ post.url }}">Читать дальше</a></li></ul>
+      <ul>
+        <li><a class="dsq-comment-count" href="{{ post.url }}#disqus_thread">Комменты</a></li>
+        {% if post.content contains '<!-- more -->' %}<li><a href="{{ post.url }}">Читать дальше</a></li>{% endif %}
+        
+      </ul>
     </div>
   </div>
 {% endfor %}
