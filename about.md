@@ -18,7 +18,7 @@ title: Обо мне
 
 Нужно бы немного броских слов добавить, так ведь?
 
-GIT, Mercurial, Bazaar, SVN, C, C++, D, Python, Ruby, PHP, HTML, CSS, XML, JSON, YAML, JavaScript, CSS, Java, Perl, Go, MySQL, postgresql, MongoDB, Redis, Cassandra, Memcached, Qt, Sencha, jQuery, Ruby on Rails, Django, Pylons, Yii, Symfony, Pyramid, Flask, Apache, Nginx, uWSGI, Sphinx, Celery - думаю и этого хватит.
+jQuery, XML, Java, Flask, Sencha, JavaScript, Redis, Perl, Celery, MySQL, Memcached, Qt, Pylons, Python, Ruby on Rails, Nginx, JSON, HTML, Yii, Apache, Bazaar, Ruby, uWSGI, SVN, C, GIT, Sphinx, D, Mercurial, C++, Django, CSS, Symfony, Pyramid, postgresql, MongoDB, YAML, Go, PHP, Cassandra - думаю и этого хватит.
 
 Всё вышеперечисленное мне удавалось где-то да использовать так, что для этого требовалось разбираться в том, как оно работает, исправляя чужие ошибки, документируя свои, расширяя границы чужих абстракций и создавать свои.
 
@@ -35,5 +35,7 @@ GIT, Mercurial, Bazaar, SVN, C, C++, D, Python, Ruby, PHP, HTML, CSS, XML, JSON,
 
 #### Контакты
 
-Со мной можно связаться одним способом: **dt0xff at gmail dot com**
-Нет, у меня нет ни "вконтактов", ни "одноклассников", ни каких-либо других страниц, которые я бы достаточно часто проверял, чтобы ответить.
+Со мной можно связаться через:
+**dt0xff at gmail dot com**
+[ВКонтакт](http://vk.com/id194936638)
+
