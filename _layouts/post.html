@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-
+<span class="post-date">{{ page.date | date: "%d %b" }}</span>
 <div class="row-fluid">
-  <span class="post-date">{{ page.date | date: "%d %b" }}</span>
   <div class="span12">
     <h4>{{ page.title }}</h4>
     <p class="blog-page-body">{{ content }}</p>
