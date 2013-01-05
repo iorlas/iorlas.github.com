@@ -1,5 +1,5 @@
 body {
-  padding-top: 20px;
+  padding-top: 0px;
   padding-bottom: 40px;
   background-image: url('/assets/img/bgnoise.png');
 }
@@ -72,15 +72,25 @@ footer {
 }
 
 .post-date {
-  float:right;
+  float: right;
   color: #999;
-  font-size: 12pt;
+  /*font-size: 12pt;*/
+  margin-top: 0px;
+  font-weight: normal;
 }
 
-h4 a {
+.post-title a {
   color: #333;
 }
 
+.site-title {
+  font-size: 24px;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 25px;
+  margin-top: 33px;
+}
+
+body, p {
+  line-height: 24px;
 }

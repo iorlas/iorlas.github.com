@@ -9,10 +9,10 @@ author :
   feedburner : feedname
 
 # Short description (will also be used in the RSS feed)
-description: Thoughts, ideas and experiance of stupid developer
+description: 'Thoughts, ideas and experiance of stupid developer'
 
 # Continue compiling even if there are errors. Keep it true, unless troubleshooting.
-auto: true
+#auto: true
 
 # Makes pretty permalinks. See Jekyll docs for alternatives.
 permalink: pretty
