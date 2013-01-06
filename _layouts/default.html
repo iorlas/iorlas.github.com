@@ -36,16 +36,24 @@
   <body>
 
     <div class="container-narrow">
-
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li {% if page.nav-active == "home" %}class="active"{% endif %}><a href="/">Главная</a></li>
           <li {% if page.nav-active == "archive" %}class="active"{% endif %}><a href="/archive">Посты</a></li>
-          <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="/pages">Что-то</a></li>
+          <!-- <li {% if page.nav-active == "pages" %}class="active"{% endif %}><a href="/pages">Что-то</a></li> -->
           <li {% if page.nav-active == "about" %}class="active"{% endif %}><a href="/about">Я</a></li>
+          <li ><a href="javascript:gsearch_show()"><b>G</b>.Поиск</a></li>
           <li ><a href="/feed" style="color:#e06f2d;">RSS</a></li>
         </ul>
         <h1 class="muted site-title">{{ site.name }}</h1>
+      </div>
+
+      <div class="search-box">
+        <hr/>
+        <div class="search-box-title" style="float:left"><h3 style="margin-top:0px;">Поиск по блогу</h3></div>
+        <div class="gsc-close-button"><a href="javascript:gsearch_hide()" class="icon-remove"></a></div>
+        <br />
+        <div id="cse">Loading...</div>
       </div>
 
       <hr>
@@ -79,6 +87,7 @@
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-typeahead.js"></script>
+    <script src="/assets/js/blogue.js"></script>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -91,6 +100,13 @@
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
-
+    
+    <script src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('search', '1');
+        google.setOnLoadCallback(function(){
+          new google.search.CustomSearchControl('{{ site.google-custom-search-id }}').draw('cse');
+        }, true);
+    </script>
   </body>
 </html>

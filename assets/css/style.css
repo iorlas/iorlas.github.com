@@ -94,3 +94,22 @@ h1, h2, h3, h4, h5, h6 {
 body, p {
   line-height: 24px;
 }
+
+.search-box {
+  display: none;
+}
+
+
+/* Google custom search enhance */
+.gsc-clear-button {
+  display: none;
+  width: 100%;
+}
+.gsc-close-button {
+  float: right;
+}
+.gsc-input input {
+  margin-top: 10px;
+}
+.gsc-search-button {
+}
