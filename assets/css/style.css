@@ -113,3 +113,21 @@ body, p {
 }
 .gsc-search-button {
 }
+
+.share-button-container {
+  float: left;
+}
+
+.share-buttons-bottom, .share-buttons {
+  margin-left: 3px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.post-index .share-buttons-botom, .share-buttons {
+  margin-bottom: 0px; 
+}
+
+.post-index .pagination {
+  margin: 0px;
+}
