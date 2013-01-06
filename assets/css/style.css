@@ -131,3 +131,16 @@ body, p {
 .post-index .pagination {
   margin: 0px;
 }
+
+
+.archive-button {
+  text-align: center;
+}
+
+.archive-page a {
+  color: #333;
+}
+
+.archive-page a .arrow {
+  color: #08C;
+}

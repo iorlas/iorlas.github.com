@@ -1,17 +1,27 @@
 ---
 nav-active: archive
 layout: page
-title: Все посты
+title: Архив
 ---
 
 Всё-всё, здесь и сразу. <br><br>
 
-<dl class="dl-horizontal">
+<dl class="dl-horizontal archive-page">
   {% for post in site.posts %}
-    <dt>{% if  post.next and post.next.date == post.date%}
-    {% else %}
-        {{ post.date | date: "%Y %B %d" }}
-    {% endif %}</dt>
-    <dd><a href="{{ post.url }}">{{ post.title }} &rarr;</a></dd>
+    {% capture post_date_day %}{{ post.date | date: "%d" }}{% endcapture %}
+    {% capture post_date_month %}{{ post.date | date: "%B" }}{% endcapture %}
+    {% capture post_next_date_day %}{{ post.next.date | date: "%d" }}{% endcapture %}
+    {% capture post_next_date_month %}{{ post.next.date | date: "%B" }}{% endcapture %}
+
+    <dt>
+      {% if post.next and post_next_date_month == post_date_month %}
+      {% else %}
+        {{ post.date | date: "%Y %B" }}
+      {% endif %}  
+    </dt>
+    <dd>
+      <span class="muted">{{ post.date | date: "%d" }} //</small>&nbsp;
+      <a href="{{ post.url }}">{{ post.title }} <span class="arrow">&rarr;</span></a>
+    </dd>
   {% endfor %}
 </dl>
