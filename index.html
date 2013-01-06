@@ -6,9 +6,23 @@ layout: default
     <h2 class="post-title"><small class="muted">{{ post.date | date: "%d %b" }} //</small>&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></h2>
     {% include post_excerpt_github_hack.html %}
     <div class="pagination"><ul>
-        <li><a class="dsq-comment-count" href="{{ post.url }}#disqus_thread">Комменты</a></li>
+        <li><a class="dsq-comment-count" href="{{ post.url }}#disqus_thread">Loading comments...</a></li>
         {% if post.content contains '<!-- more -->' %}<li><a href="{{ post.url }}">Читать дальше</a></li>{% endif %}
         
     </ul></div>
   </div>
 {% endfor %}
+
+
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = '{{ site.disqus_name }}'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>

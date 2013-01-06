@@ -19,6 +19,8 @@ permalink: pretty
 
 markdown: rdiscount
 
+disqus_name: iorlasblog
+
 google-analytics-id: 'UA-36442381-2'
 
-production_url: http://iorlas.github.com
+production_url: http://iorlas.com
