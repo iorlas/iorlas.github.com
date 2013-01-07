@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll & Github - Excerpts как в WordPress"
-published: true
+published: false
 ---
 
 Ужас-то какой!
@@ -75,10 +75,12 @@ Oh humanity! **Никогда** не делайте так.
 
 Так как у меня используется более изменённый вариант, использующий хак для препроцесинга и не только, то думаю следует здесь указать код для сей идеи, очищенный от лишнего. Вдруг кому пригодится, на время до обновления Liquid в Github?
 
+{% raw %}
     {% if post.content contains '<!-- more -->' %}
         {{ content | replace: "<!-- more -->", "<!-- more" | append: "-->" }}
     {% else %}
         {{ content }}
     {% endif %}
+{% endraw %}
 
 Этот вариант я и **использую на момент написания статьи**.
