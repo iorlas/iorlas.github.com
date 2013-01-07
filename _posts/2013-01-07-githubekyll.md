@@ -80,7 +80,7 @@ Oh humanity! **Никогда** не делайте так.
         {{ content | replace: "<!-- more -->", "<!-- more" | append: "-->" }}
     {% else %}
         {{ content }}
-    {% endif %}
+    {% endif %}1
 {% endraw %}
 
 Этот вариант я и **использую на момент написания статьи**.
