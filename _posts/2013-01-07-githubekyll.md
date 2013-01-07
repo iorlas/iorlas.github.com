@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Jekyll & Github - Excerpts как в WordPress"
-published: false
+published: true
 ---
 
 Ужас-то какой!
