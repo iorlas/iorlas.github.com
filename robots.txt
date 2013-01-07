@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://iorlas.com/sitemap.txt
