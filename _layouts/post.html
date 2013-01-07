@@ -4,11 +4,7 @@ layout: default
 <div class="post">
   <h2 class="post-title"><small class="muted">{{ page.date | date: "%d %b" }} //</small>&nbsp;<a href="{{ page.url }}">{{ page.title }}</a></h2>
 
-  <div class="share-buttons clearfix">
-    {% include social_bar_page.html %}
-  </div>
-
-  {{ content }}
+  {% include preprocess_content.html %} {{ content_ready }}
 
   <div class="share-buttons-botom clearfix">
     {% include social_bar_page.html %}

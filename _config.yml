@@ -16,13 +16,10 @@ description: 'Thoughts, ideas and experiance of stupid developer'
 
 # Makes pretty permalinks. See Jekyll docs for alternatives.
 permalink: pretty
-
+pygments: true
 markdown: rdiscount
 
 disqus_name: iorlasblog
-
 google-analytics-id: 'UA-36442381-2'
-
 google-custom-search-id: '012092466656707447144:lmaxqxu7fjm'
-
 production_url: http://iorlas.com

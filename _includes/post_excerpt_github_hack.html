@@ -1,8 +1,8 @@
 {% if post.content contains '<!-- more -->' %}
   <div class="blog-page-body">
-    {{ post.content | replace: "<!-- more -->", "<!-- more" }}
-    -->
+    {% include preprocess_content.html %}
+    {{ content_ready | replace: "<!-- more -->", "<!-- more" | append: "-->" }}
   </div>
 {% else %}
-  <div class="blog-page-body">{{ post.content }}</div>
+  <div class="blog-page-body">{% include preprocess_content.html %} {{ content_ready }}</div>
 {% endif %}
