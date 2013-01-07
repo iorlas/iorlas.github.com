@@ -11,18 +11,10 @@ Double-hyphen to long dash
 {% endcomment %}
 
 {% comment %} save html comments {% endcomment %}
-{% capture _content %}
-{{ _content | replace: "<!--", "<!.." | replace: "-->", "..>" }}
-{% endcapture %}
 
 {% capture _content %}
-{{ _content | replace: "--", "—" }}
+{{ _content | replace: " -- ", " — " }}
 {% endcapture %}
-
-{% capture _content %}
-{{ _content | replace: "<!..", "<!--" | replace: "..>", "-->" }}
-{% endcapture %}
-
 
 {% comment %} finalize {% endcomment %}
 {% capture content_ready %}{{ _content }}{% endcapture %}
