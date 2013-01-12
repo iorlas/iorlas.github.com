@@ -1,11 +1,12 @@
-<!-- twitter -->
-<div class="twitter share-button-container"><a href="https://twitter.com/share" class="twitter-share-button" data-text="{{ page.title }} | DenisT" data-url="{{ site.production_url }}{{ page.url }}">Tweet</a>
-</div>
+<div class="addthis_toolbox addthis_default_style"
+        addthis:url="{{ site.production_url }}{{ page.url }}"
+        addthis:title="{{ page.title }}"
+        addthis:description="{{ page.content | strip_html | truncate: 100 }}">
 
-<!-- g+ -->
-<div class="gpo share-button-container">
-  <div class="g-plusone" data-size="medium" data-href="{{ site.production_url }}{{ page.url }}"></div>
-</div>
 
-<!-- vk -->
-<div class="vkontakte share-button-container" data-url="{{ site.production_url }}{{ page.url }}" data-title="{{ page.title }} | DenisT" data-description="{{ page.content | truncate: 100 }}">VK</div>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_google_plusone"></a>
+<a class="addthis_button_vk"></a>
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_compact"></a>
+</div>
