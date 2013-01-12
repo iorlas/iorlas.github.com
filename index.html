@@ -9,6 +9,8 @@ layout: default
     <div class="share-buttons-bottom clearfix">
         {% include social_bar_post.html %}
     </div>
+
+    
     <div class="pagination"><ul>
         <li><a class="dsq-comment-count" href="{{ post.url }}#disqus_thread">Loading comments...</a></li>
         {% if post.content contains '<!-- more -->' %}<li><a href="{{ post.url }}">Читать дальше</a></li>{% endif %}
