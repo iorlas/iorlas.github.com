@@ -150,8 +150,8 @@ Parallels даёт готовое решение, которое имеет не
     </tr>
     <tr>
         <td>UnixBench (w/ one processor)</td>
-        <td>1371.7</td>
         <td>488.4</td>
+        <td>1117.4</td>
     </tr>
    </tbody>
 </table>
