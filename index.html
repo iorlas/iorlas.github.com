@@ -5,7 +5,10 @@ layout: default
   <div class="post post-index">
     <h2 class="post-title"><small class="muted">{{ post.date | date: "%d %b" }} //</small>&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></h2>
 
-    {% include post_excerpt_github_hack.html %}
+    <div class="blog-page-body">
+        {% include post_excerpt_github_hack.html %}
+    </div>
+
     <div class="share-buttons-bottom clearfix">
         {% include social_bar_post.html %}
     </div>
