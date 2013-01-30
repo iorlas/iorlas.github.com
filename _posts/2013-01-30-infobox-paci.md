@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Parallels Automation: облачный InfoBox"
-published: false
+title: "Parallels Automation: Облачный InfoBox"
+published: true
 ---
 
 Ещё в 2005ом году Cloud computing начал набирать обороты с появлением Amazon Elastic Compute Cloud. Это была настоящая инновация, полное переосмысление того, как мы используем ресурсы вычислительных систем.
