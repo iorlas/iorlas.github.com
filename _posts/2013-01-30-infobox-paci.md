@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Parallels Automation: Облачный InfoBox"
+title: "PACI: Облачный InfoBox"
 published: true
 ---
 
