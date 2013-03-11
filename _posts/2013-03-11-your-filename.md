@@ -1,10 +1,34 @@
 ---
 layout: post
 title: Python: Quack Quack
-published: false
+published: true
 ---
 
-2.6
+Сегодня на работе натолкнулись на проблему: на продакшне стала падать страница создания счетов.
+Трейсбек указывал на строку:
+
+{% highlight python %}
+File "python2.6/site-packages/django/db/models/sql/where.py", line 57, in add
+    value = list(value)
+{% endhighlight %}
+
+Код же был прост и элементарен:
+{% highlight python %}
+Foo.objects.filter(x=y)
+{% endhighlight %}
+
+Казалось бы, зачем приводить здесь что-то к листу? Вся магия оказалась в проверке строкой выше, в том же файле, в `models/sql/where.py`:
+{% highlight python %}
+if isinstance(value, collections.Iterator):
+    ...
+{% endhighlight %}
+
+Но почему isinstance возвращает `True`? `y` не является итератором, это просто экземпляр  модели!
+
+<!-- more -->
+Вся хитрость оказалась в том, как работает isinstance -- это **живое воплощение сути дактайпинга**. Да-да!
+Объект `y` имел определённый метод `next`, по этой причине проверка проходила положительно, что не очень хорошо. Однако *частично* правильно. В Python 2.6:
+{% highlight python %}
 >>> class test(object):
 ...     def next(self):
 ...             pass
@@ -12,8 +36,11 @@ published: false
 >>> from collections import Iterator
 >>> isinstance(test(), Iterator)
 True
+{% endhighlight %}
 
-2.7
+В Python 2.7 ошибку воспроизвести не удавалось и понятно почему:
+
+{% highlight python %}
 >>> class test(object):
 ...     def next(self):
 ...             pass
@@ -21,8 +48,11 @@ True
 >>> from collections import Iterator
 >>> isinstance(test(), Iterator)
 False
+{% endhighlight %}
 
-2.7
+В 2.7 в "требования" был добавлен метод `__iter__`.
+
+{% highlight python %}
 >>> class test(object):
 ...     def next(self):
 ...             pass
@@ -31,3 +61,6 @@ False
 ... 
 >>> isinstance(test(), Iterator)
 True
+{% endhighlight %}
+
+Однако, это далеко не единственный подводный камень при использовании `isinstance`. Если есть необходимость гарантированно знать какого типа объект, то следует использвоать сравнение типов используя функцию `type`.
