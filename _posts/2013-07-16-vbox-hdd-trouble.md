@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: VirtualBox и проблемы с HDD
 ---
