@@ -1,25 +1,59 @@
-# Name of your blog (this will show up in the RSS feed)
-name: Socially Awkward Penguin blog
+name: Your New Jekyll Site
+description: Blogging about stuffs
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-author :
-  name : DenisT
-  email : dt0xff@gmail.com
-  github : iorlas
-  twitter : username
-  feedburner : feedname
+aboutPage: true
 
-# Short description (will also be used in the RSS feed)
-description: 'Thoughts, ideas and experiance of stupid developer'
+markdown: redcarpet
+highlighter: pygments
 
-# Continue compiling even if there are errors. Keep it true, unless troubleshooting.
-#auto: true
+paginate: 20
+baseurl: /
+domain_name: 'http://ohmy.rocks'
+google_analytics: 'UA-XXXXXXXX-X'
+disqus_shortname: 'your-disqus-shortname'
 
-# Makes pretty permalinks. See Jekyll docs for alternatives.
-permalink: pretty
-pygments: true
-markdown: rdiscount
+# Details for the RSS feed generator
+url:            'http://ohmy.rocks'
+author:         'Denis'
+authorTwitter:  'YourTwitterUsername'
 
-disqus_name: iorlasblog
-google-analytics-id: 'UA-36442381-2'
-google-custom-search-id: '012092466656707447144:lmaxqxu7fjm'
-production_url: http://iorlas.com
+permalink:       /:year/:title/
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+
+oold:
+    author :
+      name : DenisT
+      email : dt0xff@gmail.com
+      github : iorlas
+      twitter : username
+      feedburner : feedname
+
+    # Short description (will also be used in the RSS feed)
+    description: 'Thoughts, ideas and experiance of stupid developer'
+
+    # Continue compiling even if there are errors. Keep it true, unless troubleshooting.
+    #auto: true
+
+    # Makes pretty permalinks. See Jekyll docs for alternatives.
+    permalink: pretty
+    pygments: true
+    markdown: rdiscount
+
+    disqus_name: iorlasblog
+    google-analytics-id: 'UA-36442381-2'
+    google-custom-search-id: '012092466656707447144:lmaxqxu7fjm'
+    production_url: http://iorlas.com
