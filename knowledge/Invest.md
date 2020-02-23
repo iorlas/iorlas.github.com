@@ -1,0 +1,1 @@
+https://blog.samaltman.com/how-to-invest-in-startups

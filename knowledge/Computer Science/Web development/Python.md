@@ -1,0 +1,1 @@
+http://jakevdp.github.io/blog/2014/05/09/why-python-is-slow/
